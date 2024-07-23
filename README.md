@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @potabattulahemavardhani
 - 👀 I’m interested in Coding
-- 🌱 I’m currently learning java
+- 🌱 I’m currently learning java full stack
 - 💞️ I’m looking to collaborate on 
 - 📫 How to reach me ...
 - 😄 Pronouns: ...

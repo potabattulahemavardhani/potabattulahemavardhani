@@ -1,0 +1,29 @@
+import pandas as pd
+
+def print_variables_from_dataset(file_path, target_column):
+    # Load the dataset
+    df = pd.read_csv(file_path)
+   
+    # Print the entire dataset for reference
+    print("Dataset:")
+    print(df.head(), "\n")
+   
+    # Check if the target_column exists in the dataset
+    if target_column not in df.columns:
+        raise ValueError(f"The specified target column '{target_column}' does not exist in the dataset.")
+   
+    # Identify independent and dependent variables
+    independent_vars = df.drop(columns=[target_column])
+    dependent_var = df[target_column]
+   
+    # Print the variables
+    print("Independent Variables (Features):")
+    print(independent_vars.head(), "\n")
+   
+    print("Dependent Variable (Target):")
+    print(dependent_var.head(), "\n")
+
+# Example usage
+file_path = '/content/studentdetails.csv'  # Replace with your dataset file path
+target_column = 'Age'        # Replace with the name of your target column
+print_variables_from_dataset(file_path, target_column)

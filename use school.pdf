@@ -1,0 +1,84 @@
+use school
+switched to db school
+show dbs
+admin    40.00 KiB
+college  72.00 KiB
+config   84.00 KiB
+local    40.00 KiB
+db.createCollection("student")
+{ ok: 1 }
+db.student.insertOne({name:"lavanya",class:"4",age:"9",grade:"10"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66a8e89c34d3410d31b7d0d6')
+}
+db.student.insertMany([{name:"hema",class:"5",age:"10",grade:"9"},{name:"alice",class:"4",age:"9",grade:"8"},{name:"jack",class:"5",age:"10",grade:"9"}])
+db.student.insertMany([{name:"hema",class:"5",age:"10",grade:"9"},{name:"alice",class:"4",age:"9",grade:"8"},{name:"jack",class:"5",age:"10",grade:"9"}])
+
+db.student.find({})
+
+{
+  _id: ObjectId('66a8e89c34d3410d31b7d0d6'),
+  name: 'lavanya',
+  class: '4',
+  age: '9',
+  grade: '10'
+}
+{
+  _id: ObjectId('66a8ea0434d3410d31b7d0d7'),
+  name: 'hema',
+  class: '5',
+  age: '10',
+  grade: '9'
+}
+{
+  _id: ObjectId('66a8ea0434d3410d31b7d0d8'),
+  name: 'alice',
+  class: '4',
+  age: '9',
+  grade: '8'
+}
+{
+  _id: ObjectId('66a8ea1834d3410d31b7d0da'),
+  name: 'hema',
+  class: '5',
+  age: '10',
+  grade: '9'
+}
+
+db.student.find({name:"hema"})
+
+{
+  _id: ObjectId('66a8ea0434d3410d31b7d0d7'),
+  name: 'hema',
+  class: '5',
+  age: '10',
+  grade: '9'
+}
+
+db.student.deleteOne({name:"alice"})
+
+db.student.find({})
+
+{
+  _id: ObjectId('66a8e89c34d3410d31b7d0d6'),
+  name: 'lavanya',
+  class: '4',
+  age: '9',
+  grade: '10'
+}
+{
+  _id: ObjectId('66a8ea0434d3410d31b7d0d7'),
+  name: 'hema',
+  class: '5',
+  age: '10',
+  grade: '9'
+}
+{
+
+  _id: ObjectId('66a8ea0434d3410d31b7d0d9'),
+  name: 'jack',
+  class: '5',
+  age: '10',
+  grade: '9'
+}
